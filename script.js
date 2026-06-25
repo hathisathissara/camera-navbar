@@ -61,13 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Navbar background on scroll ---
   function updateNavbar() {
     if (window.scrollY > 80) {
-      navbar.style.background = 'rgba(15, 15, 15, 0.95)';
-      navbar.style.backdropFilter = 'blur(20px)';
-      navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.03) inset';
+      navbar.classList.add('scrolled');
     } else {
-      navbar.style.background = '';
-      navbar.style.backdropFilter = '';
-      navbar.style.boxShadow = '';
+      navbar.classList.remove('scrolled');
     }
   }
 

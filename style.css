@@ -75,67 +75,219 @@ img {
    =========================== */
 .navbar {
   position: fixed;
-  top: 20px;
+  top: 30px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) perspective(1200px) rotateX(2deg);
   width: calc(100% - 48px);
   max-width: 1100px;
   height: var(--nav-height);
-  background: var(--nav-bg);
+  background:
+    linear-gradient(180deg,
+      #1e1e1e 0%,
+      #181818 30%,
+      #141414 70%,
+      #101010 100%
+    );
   border-radius: 14px;
   z-index: 1000;
-  border: 1px solid var(--border);
+  border: 1px solid #2e2e2e;
+  border-top: 1px solid #383838;
+  border-bottom: 1px solid #1a1a1a;
   box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.5),
-    0 1px 0 rgba(255, 255, 255, 0.03) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.3) inset;
+    /* Main drop shadow */
+    0 12px 50px rgba(0, 0, 0, 0.7),
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    /* Bottom edge shadow for thickness */
+    0 4px 0 #0e0e0e,
+    0 5px 0 #0a0a0a,
+    0 6px 2px rgba(0, 0, 0, 0.6),
+    /* Top highlight */
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    /* Inner bottom shadow for depth */
+    0 -2px 4px rgba(0, 0, 0, 0.5) inset;
   overflow: visible;
 }
 
-/* Camera decorative elements */
-.camera-knob {
+/* Bottom edge - visible thickness of camera body */
+.navbar::after {
+  content: '';
   position: absolute;
-  width: 28px;
-  height: 16px;
-  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 50%, #222 100%);
-  border-radius: 4px 4px 0 0;
-  top: -15px;
-  border: 1px solid #333;
-  border-bottom: none;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  bottom: -5px;
+  left: 4px;
+  right: 4px;
+  height: 5px;
+  background: linear-gradient(180deg, #0e0e0e 0%, #080808 100%);
+  border-radius: 0 0 12px 12px;
+  border: 1px solid #1a1a1a;
+  border-top: none;
+  z-index: -1;
 }
 
+/* Camera body raised center section - the viewfinder bump */
+.camera-body-top {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 22px;
+  background:
+    linear-gradient(180deg, #222 0%, #1c1c1c 40%, #181818 100%);
+  border: 1px solid #333;
+  border-bottom: none;
+  border-top: 1px solid #3a3a3a;
+  border-radius: 10px 10px 0 0;
+  z-index: 2;
+  box-shadow:
+    0 -6px 18px rgba(0, 0, 0, 0.5),
+    0 -2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth connection between bump and body */
+.camera-body-top::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -22px;
+  width: 22px;
+  height: 12px;
+  background: radial-gradient(ellipse at top right, transparent 68%, #181818 69%);
+}
+
+.camera-body-top::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -22px;
+  width: 22px;
+  height: 12px;
+  background: radial-gradient(ellipse at top left, transparent 68%, #181818 69%);
+}
+
+/* Right side grip area - raised section */
+.camera-grip-area {
+  position: absolute;
+  top: -12px;
+  right: -1px;
+  width: 200px;
+  height: calc(100% + 17px);
+  background:
+    linear-gradient(180deg, #1f1f1f 0%, #191919 30%, #151515 70%, #111 100%);
+  border: 1px solid #333;
+  border-left: 1px solid #2a2a2a;
+  border-top: 1px solid #3a3a3a;
+  border-bottom: 1px solid #1a1a1a;
+  border-radius: 0 14px 14px 0;
+  z-index: 3;
+  box-shadow:
+    -6px 0 16px rgba(0, 0, 0, 0.35),
+    -2px 0 4px rgba(0, 0, 0, 0.2),
+    inset 2px 0 0 rgba(255, 255, 255, 0.04),
+    inset 0 2px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Camera decorative elements - 3D Knobs */
+.camera-knob {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      #3a3a3a 0deg 4deg,
+      #1a1a1a 4deg 8deg
+    );
+  border: 1px solid #111;
+  box-shadow:
+    0 -4px 12px rgba(0, 0, 0, 0.8),
+    0 4px 6px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  animation: knobSpin 30s linear infinite;
+  cursor: grab;
+  transition: box-shadow 0.3s ease;
+}
+
+.camera-knob:hover {
+  box-shadow:
+    0 -4px 14px rgba(200, 149, 108, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+  animation-play-state: paused;
+}
+
+/* Inner circle on knob - multi-level dial */
+.camera-knob::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #444 0%, #1a1a1a 50%, #0a0a0a 100%);
+  border: 1px solid #111;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Grip line on knob */
 .camera-knob::after {
   content: '';
   position: absolute;
   top: 3px;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
-  height: 2px;
-  background: #444;
+  width: 2px;
+  height: 5px;
+  background: #555;
   border-radius: 1px;
 }
 
+@keyframes knobSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Left knob - on the left edge of navbar body */
 .camera-knob-left {
-  left: 40px;
+  top: -20px;
+  left: 24px;
+  z-index: 10;
+  animation-direction: normal;
 }
 
+/* Right knob - on the grip area */
 .camera-knob-right {
-  right: 80px;
-}
-
-.camera-hotshoe {
-  position: absolute;
-  top: -12px;
+  top: -18px;
   left: 50%;
   transform: translateX(-50%);
-  width: 44px;
-  height: 12px;
-  background: linear-gradient(180deg, #2a2a2a, #1e1e1e);
+  animation-direction: reverse;
+  animation-duration: 30s;
+}
+
+/* Camera Hot Shoe - centered in the top bump */
+.camera-hotshoe {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 14px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 60%, #222 100%);
   border-radius: 3px 3px 0 0;
-  border: 1px solid #333;
+  border: 1px solid #383838;
   border-bottom: none;
+  z-index: 5;
 }
 
 .camera-hotshoe::before {
@@ -144,23 +296,54 @@ img {
   bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 5px;
-  background: #181818;
+  width: 18px;
+  height: 6px;
+  background: linear-gradient(180deg, #131313, #181818);
   border: 1px solid #2a2a2a;
   border-radius: 1px;
 }
 
+/* Camera Recording Indicator - on grip area */
 .camera-indicator {
   position: absolute;
-  top: -8px;
-  right: 50px;
-  width: 8px;
-  height: 8px;
-  background: radial-gradient(circle, #1a1a1a 40%, #c8956c 40%, #c8956c 60%, #2a2a2a 60%);
+  bottom: 50%;
+  right: 30px;
+  transform: translateY(50%);
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  border: 1px solid #333;
-  box-shadow: 0 0 6px rgba(200, 149, 108, 0.2);
+  background: radial-gradient(circle at 45% 45%, #1a1a1a 32%, #c8956c 32%, #c8956c 52%, #2a2a2a 52%);
+  border: 1.5px solid #444;
+  box-shadow: 0 0 8px rgba(200, 149, 108, 0.2);
+  animation: indicatorPulse 3s ease-in-out infinite;
+  z-index: 6;
+}
+
+@keyframes indicatorPulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(200, 149, 108, 0.2); }
+  50% { box-shadow: 0 0 14px rgba(200, 149, 108, 0.5); }
+}
+
+/* Camera Grip Lever - vertical element on far right */
+.camera-grip-lever {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 40px;
+  background:
+    linear-gradient(90deg, #262626 0%, #1e1e1e 30%, #1a1a1a 50%, #1e1e1e 70%, #262626 100%);
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+  box-shadow:
+    2px 0 6px rgba(0, 0, 0, 0.4),
+    -1px 0 3px rgba(0, 0, 0, 0.2),
+    inset 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px 0 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 6;
 }
 
 .nav-inner {
@@ -169,24 +352,30 @@ img {
   justify-content: space-between;
   height: 100%;
   padding: 0 28px;
+  padding-right: 216px;
+  position: relative;
+  z-index: 4;
 }
 
-/* Logo */
+/* Logo - recessed circular dial like camera mode dial */
 .nav-logo {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-full);
-  border: 1.5px solid var(--border-light);
+  border: 2px solid #2e2e2e;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a1a, #111);
+  background:
+    radial-gradient(circle at 45% 40%, #1a1a1a, #111 60%, #0d0d0d);
   cursor: pointer;
   transition: var(--transition-base);
   flex-shrink: 0;
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.04),
+    0 0 0 3px rgba(0, 0, 0, 0.15);
 }
 
 .nav-logo:hover {
