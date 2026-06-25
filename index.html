@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DP Photography - Professional photography portfolio showcasing stunning portfolio, films, and creative work.">
+  <title>dp. Photography | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <div class="nav-logo" id="nav-logo">
+        <span class="logo-text">dp.</span>
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li>
+          <a href="#home" class="nav-link active" id="nav-home">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 12L12 3l9 9"/>
+              <path d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9"/>
+            </svg>
+            <span class="nav-label">HOME</span>
+            <span class="nav-dot"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#portfolio" class="nav-link" id="nav-portfolio">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="5" width="20" height="15" rx="2"/>
+              <circle cx="12" cy="12.5" r="3.5"/>
+              <path d="M7 5V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v1"/>
+            </svg>
+            <span class="nav-label">PORTFOLIO</span>
+          </a>
+        </li>
+        <li>
+          <a href="#films" class="nav-link" id="nav-films">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="3" y1="15" x2="21" y2="15"/>
+              <line x1="9" y1="3" x2="9" y2="21"/>
+              <line x1="15" y1="3" x2="15" y2="21"/>
+            </svg>
+            <span class="nav-label">FILMS</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="nav-link" id="nav-about">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M5 20c0-4 3.5-7 7-7s7 3 7 7"/>
+            </svg>
+            <span class="nav-label">ABOUT</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link" id="nav-contact">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 4l10 9 10-9"/>
+            </svg>
+            <span class="nav-label">CONTACT</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Social Icons -->
+      <div class="nav-social" id="nav-social">
+        <a href="#" class="social-icon" id="social-instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" id="social-vimeo" aria-label="Vimeo">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 7.42c-.1 2.1-1.56 4.98-4.38 8.64C14.7 19.94 12.26 22 10.24 22c-1.24 0-2.3-1.16-3.16-3.48-.58-2.12-1.15-4.24-1.73-6.36C4.73 9.84 4.07 8.68 3.36 8.68c-.16 0-.7.32-1.64.96L.68 8.28c1.03-.9 2.04-1.82 3.04-2.72C5.08 4.36 6.12 3.72 6.8 3.66c1.42-.14 2.3.84 2.62 2.92.36 2.26.6 3.66.74 4.2.4 1.86.86 2.78 1.34 2.78.38 0 .94-.6 1.7-1.78.76-1.2 1.16-2.1 1.2-2.72.1-1.02-.3-1.54-1.2-1.54-.44 0-.88.1-1.34.3.88-2.92 2.58-4.34 5.08-4.26 1.86.06 2.74 1.26 2.64 3.62z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" id="social-youtube" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12 9.55 15.57z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Camera body decorative elements -->
+    <div class="camera-knob camera-knob-left"></div>
+    <div class="camera-hotshoe"></div>
+    <div class="camera-knob camera-knob-right"></div>
+    <div class="camera-indicator"></div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Capturing Moments That Last Forever</p>
+      <h1 class="hero-title">
+        <span class="hero-title-line">Visual</span>
+        <span class="hero-title-line accent">Storytelling</span>
+      </h1>
+      <p class="hero-desc">Award-winning photography and cinematography. We transform ordinary moments into extraordinary visual narratives.</p>
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn btn-primary" id="btn-view-work">View My Work</a>
+        <a href="#contact" class="btn btn-outline" id="btn-get-in-touch">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" id="scroll-indicator">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO SECTION ===== -->
+  <section class="section portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Selected Works</h2>
+        <p class="section-desc">A curated collection of my finest photography work across various genres and styles.</p>
+      </div>
+      <div class="portfolio-grid" id="portfolio-grid">
+        <div class="portfolio-item portfolio-item-large" id="portfolio-1">
+          <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')"></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-cat">Landscape</span>
+            <h3>Mountain Serenity</h3>
+          </div>
+        </div>
+        <div class="portfolio-item" id="portfolio-2">
+          <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80')"></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-cat">Portrait</span>
+            <h3>Natural Light</h3>
+          </div>
+        </div>
+        <div class="portfolio-item" id="portfolio-3">
+          <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&q=80')"></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-cat">Street</span>
+            <h3>Urban Stories</h3>
+          </div>
+        </div>
+        <div class="portfolio-item" id="portfolio-4">
+          <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&q=80')"></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-cat">Nature</span>
+            <h3>Ocean Waves</h3>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item-large" id="portfolio-5">
+          <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80')"></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-cat">Travel</span>
+            <h3>Golden Hour</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FILMS SECTION ===== -->
+  <section class="section films-section" id="films">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Films</span>
+        <h2 class="section-title">Cinematic Reels</h2>
+        <p class="section-desc">Short films and cinematic projects that bring stories to life through motion.</p>
+      </div>
+      <div class="films-grid" id="films-grid">
+        <div class="film-card" id="film-1">
+          <div class="film-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=700&q=80')">
+            <div class="film-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <span class="film-duration">2:34</span>
+          </div>
+          <div class="film-info">
+            <h3>Behind The Lens</h3>
+            <p>Documentary · 2024</p>
+          </div>
+        </div>
+        <div class="film-card" id="film-2">
+          <div class="film-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=700&q=80')">
+            <div class="film-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <span class="film-duration">4:12</span>
+          </div>
+          <div class="film-info">
+            <h3>Silent Frames</h3>
+            <p>Short Film · 2024</p>
+          </div>
+        </div>
+        <div class="film-card" id="film-3">
+          <div class="film-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&q=80')">
+            <div class="film-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <span class="film-duration">3:45</span>
+          </div>
+          <div class="film-info">
+            <h3>Chasing Light</h3>
+            <p>Travel Reel · 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-col">
+          <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600&q=80')"></div>
+          <div class="about-experience">
+            <span class="exp-number">10+</span>
+            <span class="exp-label">Years of Experience</span>
+          </div>
+        </div>
+        <div class="about-content-col">
+          <span class="section-tag">About</span>
+          <h2 class="section-title">The Artist Behind<br>The Camera</h2>
+          <p class="about-text">I'm a passionate photographer and filmmaker dedicated to capturing the beauty of the world through my lens. With over a decade of experience, I specialize in landscape, portrait, and documentary photography.</p>
+          <p class="about-text">Every frame tells a story, and I believe in creating images that evoke emotion and preserve memories for generations to come.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">12</span>
+              <span class="stat-label">Awards</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">200+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Let's Create Together</h2>
+        <p class="section-desc">Have a project in mind? I'd love to hear about it. Let's bring your vision to life.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-name">Name</label>
+              <input type="text" id="input-name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="input-email">Email</label>
+              <input type="email" id="input-email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="input-subject">Subject</label>
+            <input type="text" id="input-subject" placeholder="Project inquiry">
+          </div>
+          <div class="form-group">
+            <label for="input-message">Message</label>
+            <textarea id="input-message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="btn-send-message">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>Colombo, Sri Lanka</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 4l10 9 10-9"/></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>hello@dpphotography.com</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>+94 77 123 4567</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">dp.</div>
+        <p class="footer-text">&copy; 2026 dp. Photography. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Vimeo">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.42c-.1 2.1-1.56 4.98-4.38 8.64C14.7 19.94 12.26 22 10.24 22c-1.24 0-2.3-1.16-3.16-3.48-.58-2.12-1.15-4.24-1.73-6.36C4.73 9.84 4.07 8.68 3.36 8.68c-.16 0-.7.32-1.64.96L.68 8.28c1.03-.9 2.04-1.82 3.04-2.72C5.08 4.36 6.12 3.72 6.8 3.66c1.42-.14 2.3.84 2.62 2.92.36 2.26.6 3.66.74 4.2.4 1.86.86 2.78 1.34 2.78.38 0 .94-.6 1.7-1.78.76-1.2 1.16-2.1 1.2-2.72.1-1.02-.3-1.54-1.2-1.54-.44 0-.88.1-1.34.3.88-2.92 2.58-4.34 5.08-4.26 1.86.06 2.74 1.26 2.64 3.62z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12 9.55 15.57z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
