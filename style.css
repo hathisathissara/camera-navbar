@@ -149,21 +149,21 @@ img {
 .camera-body-top::before {
   content: '';
   position: absolute;
-  bottom: -1px;
-  left: -22px;
-  width: 22px;
+  bottom: 0;
+  left: -12px;
+  width: 12px;
   height: 12px;
-  background: radial-gradient(ellipse at top right, transparent 68%, #181818 69%);
+  background: radial-gradient(circle at top left, transparent 12px, #1c1c1c 13px);
 }
 
 .camera-body-top::after {
   content: '';
   position: absolute;
-  bottom: -1px;
-  right: -22px;
-  width: 22px;
+  bottom: 0;
+  right: -12px;
+  width: 12px;
   height: 12px;
-  background: radial-gradient(ellipse at top left, transparent 68%, #181818 69%);
+  background: radial-gradient(circle at top right, transparent 12px, #1c1c1c 13px);
 }
 
 /* Right side grip area - raised section */
@@ -171,22 +171,43 @@ img {
   position: absolute;
   top: -12px;
   right: -1px;
-  width: 200px;
-  height: calc(100% + 17px);
+  width: 280px;
+  height: calc(100% + 12px);
   background:
-    linear-gradient(180deg, #1f1f1f 0%, #191919 30%, #151515 70%, #111 100%);
-  border: 1px solid #333;
-  border-left: 1px solid #2a2a2a;
-  border-top: 1px solid #3a3a3a;
+    linear-gradient(180deg, #1e1e1e 0%, #181818 30%, #141414 70%, #101010 100%);
+  border: 1px solid #2e2e2e;
+  border-left: none;
+  border-top: 1px solid #383838;
   border-bottom: 1px solid #1a1a1a;
   border-radius: 0 14px 14px 0;
   z-index: 3;
   box-shadow:
-    -6px 0 16px rgba(0, 0, 0, 0.35),
-    -2px 0 4px rgba(0, 0, 0, 0.2),
-    inset 2px 0 0 rgba(255, 255, 255, 0.04),
-    inset 0 2px 0 rgba(255, 255, 255, 0.03),
-    inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.camera-grip-area::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 4px;
+  height: 5px;
+  background: linear-gradient(180deg, #0e0e0e 0%, #080808 100%);
+  border-radius: 0 0 12px 0;
+  border-bottom: 1px solid #1a1a1a;
+  z-index: -1;
+}
+
+/* Smooth connection for grip area */
+.camera-grip-area::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at top left, transparent 12px, #1e1e1e 13px);
 }
 
 /* Camera decorative elements - 3D Knobs */
@@ -260,17 +281,18 @@ img {
 
 /* Left knob - on the left edge of navbar body */
 .camera-knob-left {
-  top: -20px;
-  left: 24px;
-  z-index: 10;
+  top: -12px;
+  left: 36px;
+  z-index: 1;
   animation-direction: normal;
 }
 
 /* Right knob - on the grip area */
 .camera-knob-right {
-  top: -18px;
-  left: 50%;
+  top: -12px;
+  left: 60%;
   transform: translateX(-50%);
+  z-index: 2;
   animation-direction: reverse;
   animation-duration: 30s;
 }
